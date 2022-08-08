@@ -3,7 +3,7 @@ package com.sc403.proyectoprograclientejv;
 
 
 public class Cable extends Servicios implements Datos {
-    protected 
+    
 
     @Override
     public void pedir_datos() {
