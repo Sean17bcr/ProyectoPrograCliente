@@ -1,7 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+//https://www.youtube.com/watch?v=6Cm31H_zmvM me ayude con este video para hacer el diseno agradable a la vista
+//https://flatuicolors.com/palette/gb me ayude de esta pagina para poder configurar los colores (Use una paleta de colores)
+
+
 package com.sc403.proyectoprograclientejv;
 
 /**
@@ -28,6 +28,17 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        btn_MostrarClientes = new javax.swing.JButton();
+        btn_MostrarPlanes = new javax.swing.JButton();
+        btn_ModificarCliente = new javax.swing.JButton();
+        btn_ModificarPlan = new javax.swing.JButton();
+        btn_EliminarCliente = new javax.swing.JButton();
+        btn_EliminarPlan = new javax.swing.JButton();
+        btn_AgregarPlan = new javax.swing.JButton();
+        btn_AgregarCliente = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -35,15 +46,140 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(245, 246, 250));
 
+        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Provedor de Internet y Cable S.M.K.J");
+
+        jPanel3.setBackground(new java.awt.Color(25, 42, 86));
+
+        btn_MostrarClientes.setBackground(new java.awt.Color(25, 42, 86));
+        btn_MostrarClientes.setForeground(new java.awt.Color(25, 42, 86));
+        btn_MostrarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_MostrarClientes.jpg"))); // NOI18N
+        btn_MostrarClientes.setBorderPainted(false);
+        btn_MostrarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_MostrarClientesActionPerformed(evt);
+            }
+        });
+
+        btn_MostrarPlanes.setBackground(new java.awt.Color(25, 42, 86));
+        btn_MostrarPlanes.setForeground(new java.awt.Color(25, 42, 86));
+        btn_MostrarPlanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_MostrarPlanes.jpg"))); // NOI18N
+        btn_MostrarPlanes.setBorderPainted(false);
+        btn_MostrarPlanes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_MostrarPlanesActionPerformed(evt);
+            }
+        });
+
+        btn_ModificarCliente.setBackground(new java.awt.Color(25, 42, 86));
+        btn_ModificarCliente.setForeground(new java.awt.Color(25, 42, 86));
+        btn_ModificarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_ModificarClientes.jpg"))); // NOI18N
+        btn_ModificarCliente.setBorderPainted(false);
+
+        btn_ModificarPlan.setBackground(new java.awt.Color(25, 42, 86));
+        btn_ModificarPlan.setForeground(new java.awt.Color(25, 42, 86));
+        btn_ModificarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_ModificarPlanes.jpg"))); // NOI18N
+        btn_ModificarPlan.setBorderPainted(false);
+
+        btn_EliminarCliente.setBackground(new java.awt.Color(25, 42, 86));
+        btn_EliminarCliente.setForeground(new java.awt.Color(25, 42, 86));
+        btn_EliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_EliminarCliente.jpg"))); // NOI18N
+        btn_EliminarCliente.setBorderPainted(false);
+
+        btn_EliminarPlan.setBackground(new java.awt.Color(25, 42, 86));
+        btn_EliminarPlan.setForeground(new java.awt.Color(25, 42, 86));
+        btn_EliminarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_EliminarPlan.jpg"))); // NOI18N
+        btn_EliminarPlan.setText("jButton4");
+        btn_EliminarPlan.setBorderPainted(false);
+
+        btn_AgregarPlan.setBackground(new java.awt.Color(25, 42, 86));
+        btn_AgregarPlan.setForeground(new java.awt.Color(25, 42, 86));
+        btn_AgregarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_AgregarPlan.jpg"))); // NOI18N
+        btn_AgregarPlan.setBorderPainted(false);
+
+        btn_AgregarCliente.setBackground(new java.awt.Color(25, 42, 86));
+        btn_AgregarCliente.setForeground(new java.awt.Color(25, 42, 86));
+        btn_AgregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_AgregarCliente.jpg"))); // NOI18N
+        btn_AgregarCliente.setText("jButton6");
+        btn_AgregarCliente.setBorderPainted(false);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_MostrarPlanes, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_MostrarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_ModificarCliente)
+                    .addComponent(btn_ModificarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btn_EliminarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(btn_AgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btn_EliminarCliente)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_AgregarPlan)))
+                .addContainerGap(159, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_EliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_AgregarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_EliminarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_AgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_MostrarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_ModificarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_MostrarPlanes, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_ModificarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                .addGap(0, 53, Short.MAX_VALUE))
+        );
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoEmpresaP.jpg"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1133, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(216, 216, 216)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -56,7 +192,7 @@ public class Principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 595, Short.MAX_VALUE))
+                .addGap(0, 498, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -72,6 +208,14 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_MostrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MostrarClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_MostrarClientesActionPerformed
+
+    private void btn_MostrarPlanesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MostrarPlanesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_MostrarPlanesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,7 +253,18 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_AgregarCliente;
+    private javax.swing.JButton btn_AgregarPlan;
+    private javax.swing.JButton btn_EliminarCliente;
+    private javax.swing.JButton btn_EliminarPlan;
+    private javax.swing.JButton btn_ModificarCliente;
+    private javax.swing.JButton btn_ModificarPlan;
+    private javax.swing.JButton btn_MostrarClientes;
+    private javax.swing.JButton btn_MostrarPlanes;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
