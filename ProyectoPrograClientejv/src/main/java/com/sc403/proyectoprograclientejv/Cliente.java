@@ -13,50 +13,17 @@ public class Cliente extends Persona {
     private String servicio;
     private String nom_Barrio;
 
-
-    public Cliente() {
-    }
-
-    public Cliente(String nom_Cliente, String cedula, String primer_Apellido, String segundo_Apellido, String num_contrato, String servicio, String nom_Barrio) {
-        this.nom_Cliente = nom_Cliente;
-        this.cedula = cedula;
-        this.primer_Apellido = primer_Apellido;
-        this.segundo_Apellido = segundo_Apellido;
+    public Cliente(String num_contrato, String servicio, String nom_Barrio, String nom_Cliente, String cedula, String primer_Apellido, String segundo_Apellido) {
+        super(nom_Cliente, cedula, primer_Apellido, segundo_Apellido);
         this.num_contrato = num_contrato;
         this.servicio = servicio;
         this.nom_Barrio = nom_Barrio;
     }
-
-    public String getNom_Cliente() {
-        return nom_Cliente;
-    }
-
-    public void setNom_Cliente(String nom_Cliente) {
-        this.nom_Cliente = nom_Cliente;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public String getPrimer_Apellido() {
-        return primer_Apellido;
-    }
-
-    public void setPrimer_Apellido(String primer_Apellido) {
-        this.primer_Apellido = primer_Apellido;
-    }
-
-    public String getSegundo_Apellido() {
-        return segundo_Apellido;
-    }
-
-    public void setSegundo_Apellido(String segundo_Apellido) {
-        this.segundo_Apellido = segundo_Apellido;
+    
+    public Cliente() {
+        this.num_contrato = "";
+        this.servicio = "";
+        this.nom_Barrio = "";
     }
 
     public String getNum_contrato() {
@@ -82,18 +49,11 @@ public class Cliente extends Persona {
     public void setNom_Barrio(String nom_Barrio) {
         this.nom_Barrio = nom_Barrio;
     }
-
-   
+    
+    
+    @Override
     public void pedir_datos() {
 
-        this.nom_Cliente = JOptionPane.showInputDialog(null, "Digite el nombre "
-                + "del cliente");
-        this.cedula = JOptionPane.showInputDialog(null, "Digite la cédula "
-                + "del cliente");
-        this.primer_Apellido = JOptionPane.showInputDialog(null, "Digite el "
-                + "primer apellido del cliente");
-        this.segundo_Apellido = JOptionPane.showInputDialog(null, "Digite el "
-                + "segundo apellido del cliente");
         this.num_contrato = JOptionPane.showInputDialog(null, "Digite el numero "
                 + "de contrato del cliente");
         this.servicio = JOptionPane.showInputDialog(null, "Digite el nombre "
