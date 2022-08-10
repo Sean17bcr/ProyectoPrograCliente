@@ -1,7 +1,6 @@
 //https://www.youtube.com/watch?v=6Cm31H_zmvM me ayude con este video para hacer el diseno agradable a la vista
 //https://flatuicolors.com/palette/gb me ayude de esta pagina para poder configurar los colores (Use una paleta de colores)
 //https://www.youtube.com/watch?v=nMhB4EoMm8A usé este video para saber cómo modificar la imagen de los botones
-
 package com.sc403.proyectoprograclientejv;
 
 public class Principal extends javax.swing.JFrame {
@@ -70,6 +69,11 @@ public class Principal extends javax.swing.JFrame {
         btn_ModificarCliente.setForeground(new java.awt.Color(25, 42, 86));
         btn_ModificarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_ModificarClientes.jpg"))); // NOI18N
         btn_ModificarCliente.setBorderPainted(false);
+        btn_ModificarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ModificarClienteActionPerformed(evt);
+            }
+        });
 
         btn_ModificarPlan.setBackground(new java.awt.Color(25, 42, 86));
         btn_ModificarPlan.setForeground(new java.awt.Color(25, 42, 86));
@@ -242,7 +246,11 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_MostrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MostrarClientesActionPerformed
-        // TODO add your handling code here:
+        ManejoArchivos objArchivos = new ManejoArchivos();
+        objArchivos.mostrar_reporte_de_Clientes();
+        
+        
+        
     }//GEN-LAST:event_btn_MostrarClientesActionPerformed
 
     private void btn_MostrarPlanesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MostrarPlanesActionPerformed
@@ -250,10 +258,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_MostrarPlanesActionPerformed
 
     private void btn_AgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarClienteActionPerformed
-        /*Cliente obje       
-        obj_Cliente.pedir_datos();
-        obj_archivos.setObj_Cliente(obj_Cliente);
-        obj_archivos.agregar_persona();*/
+        ManejoArchivos objArchivos = new ManejoArchivos();
+        Cliente objCliente = new Cliente();
+        objCliente.pedir_datos();
+        objArchivos.setObj_Cliente(objCliente);
+        objArchivos.agregar_persona();
     }//GEN-LAST:event_btn_AgregarClienteActionPerformed
 
     private void btn_EliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarClienteActionPerformed
@@ -274,6 +283,11 @@ public class Principal extends javax.swing.JFrame {
     private void btn_AgregarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarPlanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_AgregarPlanActionPerformed
+
+    private void btn_ModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarClienteActionPerformed
+        ManejoArchivos objArchivos = new ManejoArchivos();
+        objArchivos.Modificar_informacion_del_Cliente();
+    }//GEN-LAST:event_btn_ModificarClienteActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

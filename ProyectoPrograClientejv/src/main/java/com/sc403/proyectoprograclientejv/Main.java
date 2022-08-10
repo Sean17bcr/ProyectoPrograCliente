@@ -20,9 +20,9 @@ public class Main {
         while (cont.equalsIgnoreCase("s")) {
 
             opcion = JOptionPane.showInputDialog(null, "Sistema de información de los cientes \n\n"
-                    + "1. Agregar un nuevo cliente al Sistema\n"
-                    + "2. Ver reporte completo de los cientes en el Sistema\n"
-                    + "3. Borrar a un cliente del Sistema\n"
+                    + "1. Agregar un nuevo cliente al Sistema\n"//+
+                    + "2. Ver reporte completo de los cientes en el Sistema\n"//+
+                    + "3. Borrar a un cliente del Sistema\n"//+
                     + "4. Buscar un cliente en el Sistema\n"
                     + "5. Modificar la informacion del cliente en el Sistema\n"
                     + "**Ingrese la opción de que desee: ");
