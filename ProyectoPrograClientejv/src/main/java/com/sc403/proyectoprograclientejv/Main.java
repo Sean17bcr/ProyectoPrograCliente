@@ -1,20 +1,13 @@
 package com.sc403.proyectoprograclientejv;
 
-
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Michael Arias Becerra
- */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+       
+        iniciar_sistema();
 
-       Cliente obj_Cliente = new Cliente();
+        /*Cliente obj_Cliente = new Cliente();
         ManejoArchivos obj_archivos = new ManejoArchivos();
    
         String opcion, cont = "s";
@@ -44,6 +37,19 @@ public class Main {
            };
 
             cont = JOptionPane.showInputDialog(null, "Desea Continuar) s/n");
-        }
+        }*/
+    }
+
+    public static void iniciar_sistema() {
+
+        Principal frmPrincipal = new Principal();
+
+        frmPrincipal.setTitle("Bienvenido");
+
+        //Centrar un formulario en pantalla
+        frmPrincipal.setLocationRelativeTo(null);
+
+        //Mostrar en pantalla un formulario 
+        frmPrincipal.setVisible(true);
     }
 }

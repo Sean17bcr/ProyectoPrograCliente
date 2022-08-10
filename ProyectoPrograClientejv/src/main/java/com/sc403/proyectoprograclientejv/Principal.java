@@ -4,18 +4,10 @@
 
 
 package com.sc403.proyectoprograclientejv;
-
-/**
- *
- * @author Sean
- */
 public class Principal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Principal
-     */
     public Principal() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -87,6 +79,11 @@ public class Principal extends javax.swing.JFrame {
         btn_EliminarCliente.setForeground(new java.awt.Color(25, 42, 86));
         btn_EliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_EliminarCliente.jpg"))); // NOI18N
         btn_EliminarCliente.setBorderPainted(false);
+        btn_EliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EliminarClienteActionPerformed(evt);
+            }
+        });
 
         btn_EliminarPlan.setBackground(new java.awt.Color(25, 42, 86));
         btn_EliminarPlan.setForeground(new java.awt.Color(25, 42, 86));
@@ -104,6 +101,11 @@ public class Principal extends javax.swing.JFrame {
         btn_AgregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_AgregarCliente.jpg"))); // NOI18N
         btn_AgregarCliente.setText("jButton6");
         btn_AgregarCliente.setBorderPainted(false);
+        btn_AgregarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AgregarClienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -222,9 +224,16 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_MostrarPlanesActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btn_AgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_AgregarClienteActionPerformed
+
+    private void btn_EliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarClienteActionPerformed
+        ManejoArchivos objArchivos = new ManejoArchivos();
+        objArchivos.borrar_por_Num_contrato();
+        
+    }//GEN-LAST:event_btn_EliminarClienteActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
