@@ -2,12 +2,12 @@
 //https://flatuicolors.com/palette/gb me ayude de esta pagina para poder configurar los colores (Use una paleta de colores)
 //https://www.youtube.com/watch?v=nMhB4EoMm8A usé este video para saber cómo modificar la imagen de los botones
 
-
 package com.sc403.proyectoprograclientejv;
+
 public class Principal extends javax.swing.JFrame {
+
     public Principal() {
         initComponents();
-        setVisible(true);
     }
 
     /**
@@ -29,9 +29,10 @@ public class Principal extends javax.swing.JFrame {
         btn_ModificarPlan = new javax.swing.JButton();
         btn_EliminarCliente = new javax.swing.JButton();
         btn_EliminarPlan = new javax.swing.JButton();
-        btn_AgregarPlan = new javax.swing.JButton();
         btn_AgregarCliente = new javax.swing.JButton();
+        btn_AgregarPlan = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btn_salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,11 +91,11 @@ public class Principal extends javax.swing.JFrame {
         btn_EliminarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_EliminarPlan.jpg"))); // NOI18N
         btn_EliminarPlan.setText("jButton4");
         btn_EliminarPlan.setBorderPainted(false);
-
-        btn_AgregarPlan.setBackground(new java.awt.Color(25, 42, 86));
-        btn_AgregarPlan.setForeground(new java.awt.Color(25, 42, 86));
-        btn_AgregarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_AgregarPlan.jpg"))); // NOI18N
-        btn_AgregarPlan.setBorderPainted(false);
+        btn_EliminarPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EliminarPlanActionPerformed(evt);
+            }
+        });
 
         btn_AgregarCliente.setBackground(new java.awt.Color(25, 42, 86));
         btn_AgregarCliente.setForeground(new java.awt.Color(25, 42, 86));
@@ -104,6 +105,16 @@ public class Principal extends javax.swing.JFrame {
         btn_AgregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_AgregarClienteActionPerformed(evt);
+            }
+        });
+
+        btn_AgregarPlan.setBackground(new java.awt.Color(25, 42, 86));
+        btn_AgregarPlan.setForeground(new java.awt.Color(25, 42, 86));
+        btn_AgregarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_AgregarPlan.jpg"))); // NOI18N
+        btn_AgregarPlan.setBorderPainted(false);
+        btn_AgregarPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AgregarPlanActionPerformed(evt);
             }
         });
 
@@ -124,17 +135,13 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btn_EliminarCliente)
-                        .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(btn_AgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btn_EliminarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btn_AgregarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btn_AgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(58, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_AgregarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,13 +149,16 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btn_EliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_AgregarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_EliminarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_AgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btn_AgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(btn_EliminarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_AgregarPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btn_MostrarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -189,17 +199,32 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
+        btn_salir.setBackground(new java.awt.Color(127, 143, 166));
+        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_Salir.jpg"))); // NOI18N
+        btn_salir.setBorderPainted(false);
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_salir)
+                .addGap(14, 14, 14))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 541, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 460, Short.MAX_VALUE)
+                .addComponent(btn_salir)
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -225,14 +250,30 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_MostrarPlanesActionPerformed
 
     private void btn_AgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarClienteActionPerformed
-        // TODO add your handling code here:
+        /*Cliente obje       
+        obj_Cliente.pedir_datos();
+        obj_archivos.setObj_Cliente(obj_Cliente);
+        obj_archivos.agregar_persona();*/
     }//GEN-LAST:event_btn_AgregarClienteActionPerformed
 
     private void btn_EliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarClienteActionPerformed
         ManejoArchivos objArchivos = new ManejoArchivos();
+
         objArchivos.borrar_por_Num_contrato();
-        
+
     }//GEN-LAST:event_btn_EliminarClienteActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void btn_EliminarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarPlanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_EliminarPlanActionPerformed
+
+    private void btn_AgregarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarPlanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_AgregarPlanActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -275,6 +316,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_ModificarPlan;
     private javax.swing.JButton btn_MostrarClientes;
     private javax.swing.JButton btn_MostrarPlanes;
+    private javax.swing.JButton btn_salir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

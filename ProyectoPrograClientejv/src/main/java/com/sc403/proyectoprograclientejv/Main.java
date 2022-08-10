@@ -3,13 +3,18 @@ package com.sc403.proyectoprograclientejv;
 import javax.swing.JOptionPane;
 
 public class Main {
+
     public static void main(String[] args) {
-       
+
         iniciar_sistema();
 
-        /*Cliente obj_Cliente = new Cliente();
+    }
+
+    public static void manejoArchivos() {
+
+        Cliente obj_Cliente = new Cliente();
         ManejoArchivos obj_archivos = new ManejoArchivos();
-   
+
         String opcion, cont = "s";
 
         while (cont.equalsIgnoreCase("s")) {
@@ -33,11 +38,12 @@ public class Main {
             } else if (opcion.equals("4")) {
                 obj_archivos.buscar_Cliente_por_Num_Cedula();
             } else if (opcion.equals("5")) {
-               obj_archivos.Modificar_informacion_del_Cliente();
-           };
+                obj_archivos.Modificar_informacion_del_Cliente();
+            };
 
             cont = JOptionPane.showInputDialog(null, "Desea Continuar) s/n");
-        }*/
+        }
+
     }
 
     public static void iniciar_sistema() {
