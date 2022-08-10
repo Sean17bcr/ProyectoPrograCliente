@@ -8,12 +8,12 @@ package com.sc403.proyectoprograclientejv;
  *
  * @author Sean
  */
-public class frm_AgregarPlan extends javax.swing.JFrame {
+public class frm_AgregarCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form frm_AgregarPlan
+     * Creates new form frm_AgregarCliente
      */
-    public frm_AgregarPlan() {
+    public frm_AgregarCliente() {
         initComponents();
     }
 
@@ -32,6 +32,7 @@ public class frm_AgregarPlan extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(127, 143, 166));
+        jPanel1.setForeground(new java.awt.Color(127, 143, 166));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoEmpresaP.jpg"))); // NOI18N
 
@@ -41,13 +42,13 @@ public class frm_AgregarPlan extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addGap(0, 1114, Short.MAX_VALUE))
+                .addGap(0, 1090, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addGap(0, 704, Short.MAX_VALUE))
+                .addGap(0, 772, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -81,20 +82,20 @@ public class frm_AgregarPlan extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frm_AgregarPlan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_AgregarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frm_AgregarPlan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_AgregarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frm_AgregarPlan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_AgregarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frm_AgregarPlan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frm_AgregarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frm_AgregarPlan().setVisible(true);
+                new frm_AgregarCliente().setVisible(true);
             }
         });
     }
