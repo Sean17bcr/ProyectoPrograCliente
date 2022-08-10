@@ -49,8 +49,8 @@ public class Cable extends Servicios implements Datos {
     
     
 
-    @Override
-    public double calcular_precio() {
+    
+    public double calcular_precio_() {
         return (this.precio); 
     }
     
@@ -69,10 +69,7 @@ public class Cable extends Servicios implements Datos {
                 + "Si desea adquirir un canal Preimum y cual seria: ");
     }
 
-    @Override
-    public int calcularcantidaddeMG() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
+    
 
     @Override
     public void imprimir_datos() {

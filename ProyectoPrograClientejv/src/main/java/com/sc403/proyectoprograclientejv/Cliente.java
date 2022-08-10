@@ -7,12 +7,8 @@ import javax.swing.JOptionPane;
  *
  * @author Michael Arias Becerra
  */
-public class Cliente {
+public class Cliente extends Persona {
 
-    private String Nom_Cliente;
-    private String Cedula;
-    private String Primer_Apellido;
-    private String Segundo_Apellido;
     private String Num_contrato;
     private String Servicio;
     private String Nom_Barrio;

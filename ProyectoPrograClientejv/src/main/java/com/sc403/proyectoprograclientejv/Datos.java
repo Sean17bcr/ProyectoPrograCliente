@@ -6,4 +6,5 @@ public interface Datos {
     public void pedir_datos();
     public void imprimir_datos ();
     
+    
 }

@@ -20,8 +20,7 @@ public abstract class Servicios {
 
    
 
-    public abstract int calcularcantidaddeMG();
-    public abstract double calcular_precio();
+    
     
     public void imprimir_datos (){
         

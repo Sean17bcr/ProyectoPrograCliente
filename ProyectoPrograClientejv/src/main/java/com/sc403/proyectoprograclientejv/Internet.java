@@ -40,12 +40,12 @@ public class Internet extends Servicios implements Datos {
         this.Router = Router;
     }
     
-    @Override
+    
     public int calcularcantidaddeMG() {
         return(this.Megas);
     }
     
-    @Override
+    
     public double calcular_precio() {
         return (this.precio);
     }
