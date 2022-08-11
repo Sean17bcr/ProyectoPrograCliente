@@ -32,7 +32,7 @@ public class Principal extends javax.swing.JFrame {
         btn_AgregarPlan = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         btn_salir = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_chat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -183,21 +183,18 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(216, 216, 216)
+                .addGap(351, 351, 351)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -212,13 +209,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(127, 143, 166));
-        jButton1.setForeground(new java.awt.Color(245, 246, 250));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_Chat.jpg"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_chat.setBackground(new java.awt.Color(127, 143, 166));
+        btn_chat.setForeground(new java.awt.Color(245, 246, 250));
+        btn_chat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_Chat.jpg"))); // NOI18N
+        btn_chat.setBorderPainted(false);
+        btn_chat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_chatActionPerformed(evt);
             }
         });
 
@@ -228,8 +225,8 @@ public class Principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
+                .addGap(21, 21, 21)
+                .addComponent(btn_chat)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_salir)
                 .addGap(14, 14, 14))
@@ -238,14 +235,11 @@ public class Principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 460, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 454, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_salir)
-                        .addGap(14, 14, 14))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addContainerGap())))
+                    .addComponent(btn_salir, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_chat, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -306,9 +300,9 @@ public class Principal extends javax.swing.JFrame {
         objArchivos.Modificar_informacion_del_Cliente();
     }//GEN-LAST:event_btn_ModificarClienteActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_chatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_chatActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -351,8 +345,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_ModificarPlan;
     private javax.swing.JButton btn_MostrarClientes;
     private javax.swing.JButton btn_MostrarPlanes;
+    private javax.swing.JButton btn_chat;
     private javax.swing.JButton btn_salir;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
