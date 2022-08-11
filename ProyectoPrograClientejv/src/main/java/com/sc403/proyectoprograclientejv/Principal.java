@@ -3,10 +3,24 @@
 //https://www.youtube.com/watch?v=nMhB4EoMm8A usé este video para saber cómo modificar la imagen de los botones
 package com.sc403.proyectoprograclientejv;
 
-public class Principal extends javax.swing.JFrame {
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+public class Principal extends javax.swing.JFrame implements Runnable {
+
+    private String hora;
+    private String minutos;
+    private String segundos;
+    private String ampm;
+    Calendar calendario;
+    Thread h1;
 
     public Principal() {
         initComponents();
+        h1 = new Thread(this);
+        h1.start();
+
     }
 
     /**
@@ -31,6 +45,7 @@ public class Principal extends javax.swing.JFrame {
         btn_AgregarCliente = new javax.swing.JButton();
         btn_AgregarPlan = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        Lbl_Reloj = new javax.swing.JLabel();
         btn_salir = new javax.swing.JButton();
         btn_chat = new javax.swing.JButton();
 
@@ -175,6 +190,10 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/LogoEmpresaP.jpg"))); // NOI18N
 
+        Lbl_Reloj.setBackground(new java.awt.Color(255, 255, 255));
+        Lbl_Reloj.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        Lbl_Reloj.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -185,15 +204,18 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(351, 351, 351)
                 .addComponent(nombreEmpresa)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Lbl_Reloj, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(nombreEmpresa))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nombreEmpresa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Lbl_Reloj, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -259,9 +281,8 @@ public class Principal extends javax.swing.JFrame {
     private void btn_MostrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MostrarClientesActionPerformed
         ManejoArchivos objArchivos = new ManejoArchivos();
         objArchivos.mostrar_reporte_de_Clientes();
-        
-        
-        
+
+
     }//GEN-LAST:event_btn_MostrarClientesActionPerformed
 
     private void btn_MostrarPlanesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MostrarPlanesActionPerformed
@@ -337,6 +358,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Lbl_Reloj;
     private javax.swing.JButton btn_AgregarCliente;
     private javax.swing.JButton btn_AgregarPlan;
     private javax.swing.JButton btn_EliminarCliente;
@@ -353,4 +375,33 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel nombreEmpresa;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+        Thread ct = Thread.currentThread();
+
+        while (ct == h1) {
+            calcula();
+            Lbl_Reloj.setText(hora + ":" + minutos + ":" + segundos + ":" + ampm);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+
+        }
+    }
+    private void calcula() {
+        Calendar calendario = new GregorianCalendar();
+        Date fechaHoraActual = new Date();
+        calendario.setTime(fechaHoraActual);
+        ampm = calendario.get(Calendar.AM_PM) == Calendar.AM ? "AM" : "PM";
+        if (ampm.equals("PM")) {
+            int h = calendario.get(Calendar.HOUR_OF_DAY) - 12;
+            hora = h > 9 ? "" + h : "0" + h;
+        } else {
+            hora = calendario.get(Calendar.HOUR_OF_DAY) > 9 ? "" + calendario.get(Calendar.HOUR_OF_DAY) : "0" + calendario.get(Calendar.HOUR_OF_DAY);
+        }
+        minutos = calendario.get(Calendar.MINUTE) > 9 ? "" + calendario.get(Calendar.MINUTE) : "0" + calendario.get(Calendar.MINUTE);
+        segundos = calendario.get(Calendar.SECOND) > 9 ? "" + calendario.get(Calendar.SECOND) : "0" + calendario.get(Calendar.SECOND);
+    }
 }
