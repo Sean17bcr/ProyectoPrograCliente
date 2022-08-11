@@ -83,7 +83,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="351" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="nombreEmpresa" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -94,7 +94,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="nombreEmpresa" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
@@ -104,7 +104,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="nombreEmpresa">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Microsoft JhengHei UI" size="24" style="1"/>
@@ -201,7 +201,7 @@
                       <Color blue="fa" green="f6" red="f5" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/imgBTN_MostrarClientes.jpg"/>
+                      <Image iconType="3" name="/contents/imgBTN_MostrarClientes.jpg"/>
                     </Property>
                     <Property name="borderPainted" type="boolean" value="false"/>
                   </Properties>
@@ -218,7 +218,7 @@
                       <Color blue="fa" green="f6" red="f5" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/imgBTN_MostrarPlanes.jpg"/>
+                      <Image iconType="3" name="/contents/imgBTN_MostrarPlanes.jpg"/>
                     </Property>
                     <Property name="borderPainted" type="boolean" value="false"/>
                   </Properties>
@@ -235,7 +235,7 @@
                       <Color blue="fa" green="f6" red="f5" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/imgBTN_ModificarClientes.jpg"/>
+                      <Image iconType="3" name="/contents/imgBTN_ModificarClientes.jpg"/>
                     </Property>
                     <Property name="borderPainted" type="boolean" value="false"/>
                   </Properties>
@@ -252,7 +252,7 @@
                       <Color blue="fa" green="f6" red="f5" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/imgBTN_ModificarPlanes.jpg"/>
+                      <Image iconType="3" name="/contents/imgBTN_ModificarPlanes.jpg"/>
                     </Property>
                     <Property name="borderPainted" type="boolean" value="false"/>
                   </Properties>
@@ -266,7 +266,7 @@
                       <Color blue="fa" green="f6" red="f5" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/imgBTN_EliminarCliente.jpg"/>
+                      <Image iconType="3" name="/contents/imgBTN_EliminarCliente.jpg"/>
                     </Property>
                     <Property name="borderPainted" type="boolean" value="false"/>
                   </Properties>
@@ -283,7 +283,7 @@
                       <Color blue="fa" green="f6" red="f5" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/imgBTN_EliminarPlan.jpg"/>
+                      <Image iconType="3" name="/contents/imgBTN_EliminarPlan.jpg"/>
                     </Property>
                     <Property name="borderPainted" type="boolean" value="false"/>
                   </Properties>
@@ -300,7 +300,7 @@
                       <Color blue="fa" green="f6" red="f5" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/imgBTN_AgregarCliente.jpg"/>
+                      <Image iconType="3" name="/contents/imgBTN_AgregarCliente.jpg"/>
                     </Property>
                     <Property name="borderPainted" type="boolean" value="false"/>
                   </Properties>
@@ -317,7 +317,7 @@
                       <Color blue="fa" green="f6" red="f5" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/imgBTN_AgregarPlan.jpg"/>
+                      <Image iconType="3" name="/contents/imgBTN_AgregarPlan.jpg"/>
                     </Property>
                     <Property name="borderPainted" type="boolean" value="false"/>
                   </Properties>
@@ -330,7 +330,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Imagenes/LogoEmpresaP.jpg"/>
+                  <Image iconType="3" name="/contents/LogoEmpresaP.jpg"/>
                 </Property>
               </Properties>
             </Component>
@@ -345,7 +345,7 @@
               <Color blue="fa" green="f6" red="f5" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/imgBTN_Salir.jpg"/>
+              <Image iconType="3" name="/contents/imgBTN_Salir.jpg"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
@@ -362,7 +362,7 @@
               <Color blue="fa" green="f6" red="f5" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/imgBTN_Chat.jpg"/>
+              <Image iconType="3" name="/contents/imgBTN_Chat.jpg"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>

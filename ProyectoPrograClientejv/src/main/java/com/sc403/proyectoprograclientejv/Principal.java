@@ -20,7 +20,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        nombreEmpresa = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         btn_MostrarClientes = new javax.swing.JButton();
         btn_MostrarPlanes = new javax.swing.JButton();
@@ -40,15 +40,15 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(245, 246, 250));
 
-        jLabel1.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Provedor de Internet y Cable S.M.K.J");
+        nombreEmpresa.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 24)); // NOI18N
+        nombreEmpresa.setForeground(new java.awt.Color(0, 0, 0));
+        nombreEmpresa.setText("Provedor de Internet y Cable S.M.K.J");
 
         jPanel3.setBackground(new java.awt.Color(25, 42, 86));
 
         btn_MostrarClientes.setBackground(new java.awt.Color(25, 42, 86));
         btn_MostrarClientes.setForeground(new java.awt.Color(245, 246, 250));
-        btn_MostrarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_MostrarClientes.jpg"))); // NOI18N
+        btn_MostrarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_MostrarClientes.jpg"))); // NOI18N
         btn_MostrarClientes.setBorderPainted(false);
         btn_MostrarClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,7 +58,7 @@ public class Principal extends javax.swing.JFrame {
 
         btn_MostrarPlanes.setBackground(new java.awt.Color(25, 42, 86));
         btn_MostrarPlanes.setForeground(new java.awt.Color(245, 246, 250));
-        btn_MostrarPlanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_MostrarPlanes.jpg"))); // NOI18N
+        btn_MostrarPlanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_MostrarPlanes.jpg"))); // NOI18N
         btn_MostrarPlanes.setBorderPainted(false);
         btn_MostrarPlanes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +68,7 @@ public class Principal extends javax.swing.JFrame {
 
         btn_ModificarCliente.setBackground(new java.awt.Color(25, 42, 86));
         btn_ModificarCliente.setForeground(new java.awt.Color(245, 246, 250));
-        btn_ModificarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_ModificarClientes.jpg"))); // NOI18N
+        btn_ModificarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_ModificarClientes.jpg"))); // NOI18N
         btn_ModificarCliente.setBorderPainted(false);
         btn_ModificarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,12 +78,12 @@ public class Principal extends javax.swing.JFrame {
 
         btn_ModificarPlan.setBackground(new java.awt.Color(25, 42, 86));
         btn_ModificarPlan.setForeground(new java.awt.Color(245, 246, 250));
-        btn_ModificarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_ModificarPlanes.jpg"))); // NOI18N
+        btn_ModificarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_ModificarPlanes.jpg"))); // NOI18N
         btn_ModificarPlan.setBorderPainted(false);
 
         btn_EliminarCliente.setBackground(new java.awt.Color(25, 42, 86));
         btn_EliminarCliente.setForeground(new java.awt.Color(245, 246, 250));
-        btn_EliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_EliminarCliente.jpg"))); // NOI18N
+        btn_EliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_EliminarCliente.jpg"))); // NOI18N
         btn_EliminarCliente.setBorderPainted(false);
         btn_EliminarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +93,7 @@ public class Principal extends javax.swing.JFrame {
 
         btn_EliminarPlan.setBackground(new java.awt.Color(25, 42, 86));
         btn_EliminarPlan.setForeground(new java.awt.Color(245, 246, 250));
-        btn_EliminarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_EliminarPlan.jpg"))); // NOI18N
+        btn_EliminarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_EliminarPlan.jpg"))); // NOI18N
         btn_EliminarPlan.setBorderPainted(false);
         btn_EliminarPlan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +103,7 @@ public class Principal extends javax.swing.JFrame {
 
         btn_AgregarCliente.setBackground(new java.awt.Color(25, 42, 86));
         btn_AgregarCliente.setForeground(new java.awt.Color(245, 246, 250));
-        btn_AgregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_AgregarCliente.jpg"))); // NOI18N
+        btn_AgregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_AgregarCliente.jpg"))); // NOI18N
         btn_AgregarCliente.setBorderPainted(false);
         btn_AgregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,7 +113,7 @@ public class Principal extends javax.swing.JFrame {
 
         btn_AgregarPlan.setBackground(new java.awt.Color(25, 42, 86));
         btn_AgregarPlan.setForeground(new java.awt.Color(245, 246, 250));
-        btn_AgregarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_AgregarPlan.jpg"))); // NOI18N
+        btn_AgregarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_AgregarPlan.jpg"))); // NOI18N
         btn_AgregarPlan.setBorderPainted(false);
         btn_AgregarPlan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +173,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoEmpresaP.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/LogoEmpresaP.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -184,7 +184,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(351, 351, 351)
-                .addComponent(jLabel1)
+                .addComponent(nombreEmpresa)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -193,7 +193,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                    .addComponent(nombreEmpresa))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -201,7 +201,7 @@ public class Principal extends javax.swing.JFrame {
 
         btn_salir.setBackground(new java.awt.Color(127, 143, 166));
         btn_salir.setForeground(new java.awt.Color(245, 246, 250));
-        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_Salir.jpg"))); // NOI18N
+        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_Salir.jpg"))); // NOI18N
         btn_salir.setBorderPainted(false);
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,7 +211,7 @@ public class Principal extends javax.swing.JFrame {
 
         btn_chat.setBackground(new java.awt.Color(127, 143, 166));
         btn_chat.setForeground(new java.awt.Color(245, 246, 250));
-        btn_chat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imgBTN_Chat.jpg"))); // NOI18N
+        btn_chat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_Chat.jpg"))); // NOI18N
         btn_chat.setBorderPainted(false);
         btn_chat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -283,10 +283,6 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_EliminarClienteActionPerformed
 
-    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btn_salirActionPerformed
-
     private void btn_EliminarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarPlanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_EliminarPlanActionPerformed
@@ -299,6 +295,10 @@ public class Principal extends javax.swing.JFrame {
         ManejoArchivos objArchivos = new ManejoArchivos();
         objArchivos.Modificar_informacion_del_Cliente();
     }//GEN-LAST:event_btn_ModificarClienteActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_chatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chatActionPerformed
         // TODO add your handling code here:
@@ -347,10 +347,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_MostrarPlanes;
     private javax.swing.JButton btn_chat;
     private javax.swing.JButton btn_salir;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel nombreEmpresa;
     // End of variables declaration//GEN-END:variables
 }
