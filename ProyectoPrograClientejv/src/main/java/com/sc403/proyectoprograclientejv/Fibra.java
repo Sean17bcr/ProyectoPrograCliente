@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
 
 public class Fibra extends Internet{
     private String simetrico;
-    private;
 
     @Override
     public void pedir_datos() {
