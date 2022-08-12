@@ -33,8 +33,8 @@ public class Analogo extends Cable {
 
     @Override
     public void imprimir_datos() {
-        JOptionPane.showMessageDialog(null, "La calidad de video: "
-                + " "+ this.calidadVideo );
+        JOptionPane.showMessageDialog(null, "Calidad de video: "
+                + " "+ this.calidadVideo);
     }
     
     

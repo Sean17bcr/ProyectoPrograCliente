@@ -8,7 +8,8 @@ public class Fibra extends Internet{
     private String simetrico;
     private String ping;
 
-    public Fibra(String simetrico, String ping, int Megas, String Router, double precio, String tipo, String Instalacion) {
+    public Fibra(String simetrico, String ping, int Megas, String Router, 
+            double precio, String tipo, String Instalacion) {
         super(Megas, Router, precio, tipo, Instalacion);
         this.simetrico = simetrico;
         this.ping = ping;
@@ -35,9 +36,6 @@ public class Fibra extends Internet{
         this.ping = ping;
     }
     
-    
-    
-
     @Override
     public void pedir_datos() {
         this.ping = JOptionPane.showInputDialog(null, "El ping por la "
@@ -45,8 +43,6 @@ public class Fibra extends Internet{
         this.simetrico = JOptionPane.showInputDialog(null, "Ingrese la "
                 + "simetria obtenida en base al perfil del cliente: ");
     }
-    
-    
     
     @Override
     public void imprimir_datos() {
