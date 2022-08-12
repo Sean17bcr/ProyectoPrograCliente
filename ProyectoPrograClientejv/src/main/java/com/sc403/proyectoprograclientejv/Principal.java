@@ -15,11 +15,15 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private String ampm;
     Calendar calendario;
     Thread h1;
+    Thread h2;
+    
 
     public Principal() {
         initComponents();
         h1 = new Thread(this);
         h1.start();
+        h2 = new Thread(this);
+        h2.start();
 
     }
 
@@ -322,7 +326,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_chatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chatActionPerformed
-        // TODO add your handling code here:
+        //run1();
+        frmchat();
     }//GEN-LAST:event_btn_chatActionPerformed
 
     public static void main(String args[]) {
@@ -379,7 +384,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     @Override
     public void run() {
         Thread ct = Thread.currentThread();
-
+        
         while (ct == h1) {
             calcula();
             Lbl_Reloj.setText(hora + ":" + minutos + ":" + segundos + ":" + ampm);
@@ -388,6 +393,17 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             } catch (InterruptedException e) {
             }
 
+        }
+    }
+    public void run1() {
+        Thread cc = Thread.currentThread();
+        frmchat();
+        while (cc == h2) {
+            frmchat();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
         }
     }
     private void calcula() {
@@ -403,5 +419,20 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         }
         minutos = calendario.get(Calendar.MINUTE) > 9 ? "" + calendario.get(Calendar.MINUTE) : "0" + calendario.get(Calendar.MINUTE);
         segundos = calendario.get(Calendar.SECOND) > 9 ? "" + calendario.get(Calendar.SECOND) : "0" + calendario.get(Calendar.SECOND);
+    }
+    
+    
+    private void frmchat() {
+        
+        ProveedorChat frmChatProveedor = new ProveedorChat();
+        ClienteChat frmChatCliente = new ClienteChat();
+
+        frmChatProveedor.setTitle("Proveedor");
+        frmChatProveedor.setLocationRelativeTo(null);
+        frmChatProveedor.setVisible(true);
+        
+        frmChatCliente.setTitle("Bienvenido");
+        frmChatCliente.setLocationRelativeTo(null);
+        frmChatCliente.setVisible(true);
     }
 }
