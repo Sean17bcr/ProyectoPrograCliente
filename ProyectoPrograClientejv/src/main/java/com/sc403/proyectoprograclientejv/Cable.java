@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
 
 public class Cable extends Servicios implements Datos {
     protected int Canales;
-    
     protected String CanalExclusivo;
 
     public Cable(int Canales, String CanalExclusivo, 
