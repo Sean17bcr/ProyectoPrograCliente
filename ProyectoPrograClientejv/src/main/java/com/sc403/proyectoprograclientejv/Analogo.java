@@ -2,6 +2,6 @@
 package com.sc403.proyectoprograclientejv;
 
 
-public class Analogo {
+public class Analogo extends Cable {
     
 }
