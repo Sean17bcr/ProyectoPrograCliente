@@ -57,7 +57,7 @@ public class Archivos_Plan {
         this.obj_Plan = obj_Plan;
     }
 
-    public void agregar_persona() {
+    public void agregar_Plan() {
 
         try {
 
@@ -92,7 +92,7 @@ public class Archivos_Plan {
 
     }
 
-    public void mostrar_reporte_de_Clientes() {
+    public void mostrar_reporte_de_Planes() {
 
         try {
 
@@ -144,7 +144,7 @@ public class Archivos_Plan {
     }
 
 
-    public void borrar_por_Num_contrato() {
+    public void borrar_por_Nombre_dePlan() {
 
         try {
 
@@ -198,7 +198,7 @@ public class Archivos_Plan {
         }
     }
 
-    public void Modificar_informacion_del_Cliente() {
+    public void Modificar_informacion_del_Plan() {
 
         try {
 
@@ -280,5 +280,26 @@ public class Archivos_Plan {
         }
 
     }
+    /* 
     
+    
+    Plan obj_Plan = new Plan();
+    Archivos_Plan obj_Archivos = new Archivos_Plan();
+    
+    Agregar******
+    
+    obj_Plan.pedir_datos();
+    obj_Archivos.setObj_Cliente(obj_Plan);
+    obj_Archivos.agregar_Plan();
+    
+    MOstrar Planes***********
+    obj_Archivos.mostrar_Planes();
+    
+    Borrar****
+    obj_Archivos.borrar_por_Nombre_dePlan();
+    
+    Modificar Plan***
+    obj_Archivos.Modificar_informacion_del_Plan();
+    
+    */
 }
