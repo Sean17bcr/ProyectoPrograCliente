@@ -40,8 +40,10 @@ public class Fibra extends Internet{
 
     @Override
     public void pedir_datos() {
-        this.ping = JOptionPane.showInputDialog(null, "El ping por la ubicacion va a ser de: ");
-        this.simetrico = JOptionPane.showInputDialog(null, "Ingrese : ");
+        this.ping = JOptionPane.showInputDialog(null, "El ping por la "
+                + "ubicacion va a ser de: ");
+        this.simetrico = JOptionPane.showInputDialog(null, "Ingrese la "
+                + "simetria obtenida en base al perfil del cliente: ");
     }
     
     
@@ -50,8 +52,6 @@ public class Fibra extends Internet{
     public void imprimir_datos() {
         JOptionPane.showMessageDialog(null, "Ping: "
                 + " "+ this.ping + "\n" 
-                + "El lugar de la instalacion es: " +this.Instalacion+ "\n"
-                + "Router: "+this.Router+ "\n"
-                + "La cantidad de megas solicitadas son: "+ this.Megas);
+                + "Simetria: " +this.simetrico);
     }
 }
