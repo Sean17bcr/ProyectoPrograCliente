@@ -4,7 +4,6 @@
  */
 package com.sc403.proyectoprograclientejv;
 
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
@@ -20,7 +19,7 @@ public class ClienteChat extends javax.swing.JFrame {
     static Socket socket;
     static DataInputStream dataInput;
     static DataOutputStream dataOutput;
-    
+
     public ClienteChat() {
         initComponents();
     }
@@ -39,6 +38,7 @@ public class ClienteChat extends javax.swing.JFrame {
         lbl_cliente = new javax.swing.JLabel();
         txt_textoAEnviar = new javax.swing.JTextField();
         btn_enviar = new javax.swing.JButton();
+        btn_salirchat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,10 +53,21 @@ public class ClienteChat extends javax.swing.JFrame {
         txt_textoAEnviar.setBackground(new java.awt.Color(204, 255, 255));
 
         btn_enviar.setBackground(new java.awt.Color(0, 153, 153));
+        btn_enviar.setForeground(new java.awt.Color(0, 0, 0));
         btn_enviar.setText("Enviar");
         btn_enviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_enviarActionPerformed(evt);
+            }
+        });
+
+        btn_salirchat.setBackground(new java.awt.Color(0, 153, 153));
+        btn_salirchat.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_salirchat.setForeground(new java.awt.Color(0, 0, 0));
+        btn_salirchat.setText("Salir");
+        btn_salirchat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirchatActionPerformed(evt);
             }
         });
 
@@ -67,16 +78,22 @@ public class ClienteChat extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txt_textoAEnviar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txt_textoAEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                                .addComponent(btn_enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lbl_cliente)
+                        .addGap(231, 231, 231))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(232, Short.MAX_VALUE)
-                .addComponent(lbl_cliente)
-                .addGap(231, 231, 231))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_salirchat, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,17 +101,19 @@ public class ClienteChat extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lbl_cliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_textoAEnviar)
-                    .addComponent(btn_enviar, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
-                .addGap(21, 21, 21))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_textoAEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addComponent(btn_salirchat, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     //Método del botón
     private void btn_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enviarActionPerformed
         try {
@@ -106,6 +125,14 @@ public class ClienteChat extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_btn_enviarActionPerformed
+
+    private void btn_salirchatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirchatActionPerformed
+        this.setVisible(false);
+        this.dispose();
+        Principal principal = new Principal();
+        principal.setVisible(true);
+
+    }//GEN-LAST:event_btn_salirchatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,11 +168,11 @@ public class ClienteChat extends javax.swing.JFrame {
                 new ClienteChat().setVisible(true);
             }
         });
-        
+
         try {
             String mensajeEntrante = "";
-            
-            socket = new Socket("127.0.0.1",1201); // 
+
+            socket = new Socket("127.0.0.1", 1201); // 
             dataInput = new DataInputStream(socket.getInputStream());
             dataOutput = new DataOutputStream(socket.getOutputStream());
 
@@ -162,6 +189,7 @@ public class ClienteChat extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_enviar;
+    private javax.swing.JButton btn_salirchat;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_cliente;
     private javax.swing.JTextField txt_textoAEnviar;
