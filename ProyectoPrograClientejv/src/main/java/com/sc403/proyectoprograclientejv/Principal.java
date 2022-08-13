@@ -16,7 +16,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     Calendar calendario;
     Thread h1;
     Thread h2;
-    
 
     public Principal() {
         initComponents();
@@ -99,6 +98,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         btn_ModificarPlan.setForeground(new java.awt.Color(245, 246, 250));
         btn_ModificarPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/imgBTN_ModificarPlanes.jpg"))); // NOI18N
         btn_ModificarPlan.setBorderPainted(false);
+        btn_ModificarPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ModificarPlanActionPerformed(evt);
+            }
+        });
 
         btn_EliminarCliente.setBackground(new java.awt.Color(25, 42, 86));
         btn_EliminarCliente.setForeground(new java.awt.Color(245, 246, 250));
@@ -290,7 +294,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_btn_MostrarClientesActionPerformed
 
     private void btn_MostrarPlanesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MostrarPlanesActionPerformed
-        // TODO add your handling code here:
+        Plan obj_Plan = new Plan();
+        Archivos_Plan obj_Archivos = new Archivos_Plan();
+        obj_Archivos.mostrar_reporte_de_Planes();
     }//GEN-LAST:event_btn_MostrarPlanesActionPerformed
 
     private void btn_AgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarClienteActionPerformed
@@ -309,11 +315,20 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_btn_EliminarClienteActionPerformed
 
     private void btn_EliminarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarPlanActionPerformed
-        // TODO add your handling code here:
+        Plan obj_Plan = new Plan();
+        Archivos_Plan obj_Archivos = new Archivos_Plan();
+        Cliente objCliente = new Cliente();
+        obj_Archivos.borrar_por_Nombre_dePlan();
     }//GEN-LAST:event_btn_EliminarPlanActionPerformed
 
     private void btn_AgregarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarPlanActionPerformed
-        // TODO add your handling code here:
+        Plan obj_Plan = new Plan();
+        Archivos_Plan obj_Archivos = new Archivos_Plan();
+        obj_Plan.pedir_datos();
+        obj_Archivos.setobj_Plan(obj_Plan);
+        obj_Archivos.agregar_Plan();
+
+
     }//GEN-LAST:event_btn_AgregarPlanActionPerformed
 
     private void btn_ModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarClienteActionPerformed
@@ -329,6 +344,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         //run1();
         frmchat();
     }//GEN-LAST:event_btn_chatActionPerformed
+
+    private void btn_ModificarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarPlanActionPerformed
+        Plan obj_Plan = new Plan();
+        Archivos_Plan obj_Archivos = new Archivos_Plan();
+        obj_Archivos.Modificar_informacion_del_Plan();
+    }//GEN-LAST:event_btn_ModificarPlanActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -384,7 +405,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     @Override
     public void run() {
         Thread ct = Thread.currentThread();
-        
+
         while (ct == h1) {
             calcula();
             Lbl_Reloj.setText(hora + ":" + minutos + ":" + segundos + ":" + ampm);
@@ -395,6 +416,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         }
     }
+
     public void run1() {
         Thread cc = Thread.currentThread();
         frmchat();
@@ -406,6 +428,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             }
         }
     }
+
     private void calcula() {
         Calendar calendario = new GregorianCalendar();
         Date fechaHoraActual = new Date();
@@ -420,17 +443,16 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         minutos = calendario.get(Calendar.MINUTE) > 9 ? "" + calendario.get(Calendar.MINUTE) : "0" + calendario.get(Calendar.MINUTE);
         segundos = calendario.get(Calendar.SECOND) > 9 ? "" + calendario.get(Calendar.SECOND) : "0" + calendario.get(Calendar.SECOND);
     }
-    
-    
+
     private void frmchat() {
-        
+
         ProveedorChat frmChatProveedor = new ProveedorChat();
         ClienteChat frmChatCliente = new ClienteChat();
 
         frmChatProveedor.setTitle("Proveedor");
         frmChatProveedor.setLocationRelativeTo(null);
         frmChatProveedor.setVisible(true);
-        
+
         frmChatCliente.setTitle("Bienvenido");
         frmChatCliente.setLocationRelativeTo(null);
         frmChatCliente.setVisible(true);
