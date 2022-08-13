@@ -50,6 +50,7 @@ public class Cliente extends Persona {
         this.nom_Barrio = nom_Barrio;
     }
     
+    //Hola
     
     @Override
     public void pedir_datos() {
