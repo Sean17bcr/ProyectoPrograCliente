@@ -3,7 +3,7 @@ package com.sc403.proyectoprograclientejv;
 import javax.swing.JOptionPane;
 
 public class Main {
-
+static ClienteChat chatCliente = new ClienteChat();
     public static void main(String[] args) {
 
         iniciar_sistema();

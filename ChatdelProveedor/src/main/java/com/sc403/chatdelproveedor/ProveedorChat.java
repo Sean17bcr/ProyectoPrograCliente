@@ -1,27 +1,30 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package com.sc403.chatdelproveedor;
 
-import java.io.DataInput;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
  * @author jchav
  */
 public class ProveedorChat extends javax.swing.JFrame {
+    
+    //Declaración de las variables para hacer la conexión y envío de data
+    static ServerSocket serverSocket;
+    static Socket socket;
+    static DataInputStream dataInput;
+    static DataOutputStream dataOutput;
 
-    /**
-     * Creates new form ProveedorChat
-     */
-    
-    static ServerSocket ss;
-    static Socket s;
-    static DataInputStream din;
-    static DataOutputStream dout;
-    
-    
     public ProveedorChat() {
         initComponents();
     }
@@ -36,71 +39,78 @@ public class ProveedorChat extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtarea_zonamensajesproveedor = new javax.swing.JTextArea();
-        txt_proveedortosend = new javax.swing.JTextField();
-        btn_proveedortosend = new javax.swing.JToggleButton();
-        jLabel1 = new javax.swing.JLabel();
+        txta_mensajes = new javax.swing.JTextArea();
+        txt_textoAEnviar = new javax.swing.JTextField();
+        btn_enviar = new javax.swing.JButton();
+        lbl_proveedor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        txtarea_zonamensajesproveedor.setColumns(20);
-        txtarea_zonamensajesproveedor.setRows(5);
-        jScrollPane1.setViewportView(txtarea_zonamensajesproveedor);
+        txta_mensajes.setBackground(new java.awt.Color(153, 204, 255));
+        txta_mensajes.setColumns(20);
+        txta_mensajes.setRows(5);
+        jScrollPane1.setViewportView(txta_mensajes);
 
-        btn_proveedortosend.setText("Enviar");
-        btn_proveedortosend.addActionListener(new java.awt.event.ActionListener() {
+        txt_textoAEnviar.setBackground(new java.awt.Color(204, 255, 255));
+
+        btn_enviar.setBackground(new java.awt.Color(0, 153, 153));
+        btn_enviar.setText("Enviar");
+        btn_enviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_proveedortosendActionPerformed(evt);
+                btn_enviarActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Consultas de clientes");
+        lbl_proveedor.setFont(new java.awt.Font("Perpetua", 1, 18)); // NOI18N
+        lbl_proveedor.setText("Chat con los clientes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(txt_proveedortosend)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_proveedortosend))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(290, 290, 290)
-                        .addComponent(jLabel1)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addComponent(txt_textoAEnviar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(245, Short.MAX_VALUE)
+                .addComponent(lbl_proveedor)
+                .addGap(231, 231, 231))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(lbl_proveedor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_proveedortosend)
-                    .addComponent(btn_proveedortosend, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
-                .addGap(23, 23, 23))
+                    .addComponent(txt_textoAEnviar)
+                    .addComponent(btn_enviar, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_proveedortosendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proveedortosendActionPerformed
-        try{
-            String mensajeSaliente = "";
-            mensajeSaliente = txt_proveedortosend.getText().trim();
-            dout.writeUTF(mensajeSaliente);
-        }catch(Exception e){
-        
+    //Método del botón
+    private void btn_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enviarActionPerformed
+        try {
+            String mensaje = "";
+            mensaje = txt_textoAEnviar.getText();
+            dataOutput.writeUTF(mensaje);
+            txt_textoAEnviar.setText("");
+        } catch (Exception e) {
+
         }
-    }//GEN-LAST:event_btn_proveedortosendActionPerformed
+    }//GEN-LAST:event_btn_enviarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,8 +139,6 @@ public class ProveedorChat extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -138,28 +146,30 @@ public class ProveedorChat extends javax.swing.JFrame {
                 new ProveedorChat().setVisible(true);
             }
         });
-        String mensajeEntrante = "";
-        try{
-            ss = new ServerSocket(1201);
-            s = ss.accept();
-            
-            din = new DataInputStream(s.getInputStream());
-            dout = new DataOutputStream(s.getOutputStream());
-            
-            while (!mensajeEntrante.equals("exit")){
-                mensajeEntrante = din.readUTF();
-                txtarea_zonamensajesproveedor.setText(txtarea_zonamensajesproveedor.getText().trim()+"\n"+mensajeEntrante);
+
+        try {
+            String mensajeEntrante = "";
+            serverSocket = new ServerSocket(1201);
+            socket = serverSocket.accept();
+            dataInput = new DataInputStream(socket.getInputStream());
+            dataOutput = new DataOutputStream(socket.getOutputStream());
+
+            while (!mensajeEntrante.equals("exit")) {
+                mensajeEntrante = dataInput.readUTF();
+                //En vez de cliente definido, lo podemos cambiar por el nombre del usuario logueado
+                txta_mensajes.setText(txta_mensajes.getText() + "\n Cliente : " + mensajeEntrante);
             }
-        }catch(Exception e){
-        
+
+        } catch (Exception e) {
+
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btn_proveedortosend;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_enviar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txt_proveedortosend;
-    private static javax.swing.JTextArea txtarea_zonamensajesproveedor;
+    private javax.swing.JLabel lbl_proveedor;
+    private javax.swing.JTextField txt_textoAEnviar;
+    private static javax.swing.JTextArea txta_mensajes;
     // End of variables declaration//GEN-END:variables
 }

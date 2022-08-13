@@ -4,9 +4,10 @@
  */
 package com.sc403.proyectoprograclientejv;
 
-import java.awt.Color;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
@@ -15,13 +16,11 @@ import java.net.Socket;
  */
 public class ClienteChat extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ClienteChat
-     */
-    static Socket s;
-    static DataInputStream din;
-    static DataOutputStream dout;
-
+    //Declaración de las variables para hacer la conexión y envío de data
+    static Socket socket;
+    static DataInputStream dataInput;
+    static DataOutputStream dataOutput;
+    
     public ClienteChat() {
         initComponents();
     }
@@ -35,32 +34,29 @@ public class ClienteChat extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtarea_zonamensajescliente = new javax.swing.JTextArea();
-        txt_clientetosend = new javax.swing.JTextField();
-        btn_clientetosend = new javax.swing.JToggleButton();
-        btn_Salir = new javax.swing.JButton();
+        txta_mensajes = new javax.swing.JTextArea();
+        lbl_cliente = new javax.swing.JLabel();
+        txt_textoAEnviar = new javax.swing.JTextField();
+        btn_enviar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Chat con el Proveedor");
+        txta_mensajes.setBackground(new java.awt.Color(153, 204, 255));
+        txta_mensajes.setColumns(20);
+        txta_mensajes.setRows(5);
+        jScrollPane1.setViewportView(txta_mensajes);
 
-        txtarea_zonamensajescliente.setColumns(20);
-        txtarea_zonamensajescliente.setRows(5);
-        jScrollPane1.setViewportView(txtarea_zonamensajescliente);
+        lbl_cliente.setFont(new java.awt.Font("Perpetua", 1, 18)); // NOI18N
+        lbl_cliente.setText("Chat con el Proveedor");
 
-        btn_clientetosend.setText("Enviar");
-        btn_clientetosend.addActionListener(new java.awt.event.ActionListener() {
+        txt_textoAEnviar.setBackground(new java.awt.Color(204, 255, 255));
+
+        btn_enviar.setBackground(new java.awt.Color(0, 153, 153));
+        btn_enviar.setText("Enviar");
+        btn_enviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_clientetosendActionPerformed(evt);
-            }
-        });
-
-        btn_Salir.setText("Salir del Chat");
-        btn_Salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_SalirActionPerformed(evt);
+                btn_enviarActionPerformed(evt);
             }
         });
 
@@ -69,59 +65,47 @@ public class ClienteChat extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(290, 290, 290)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(txt_clientetosend)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btn_clientetosend))))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addComponent(txt_textoAEnviar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(232, Short.MAX_VALUE)
+                .addComponent(lbl_cliente)
+                .addGap(231, 231, 231))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(lbl_cliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_clientetosend, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_clientetosend, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
-                .addComponent(btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txt_textoAEnviar)
+                    .addComponent(btn_enviar, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_clientetosendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientetosendActionPerformed
+    
+    //Método del botón
+    private void btn_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enviarActionPerformed
         try {
-            String mensajeSaliente = "";
-            mensajeSaliente = txt_clientetosend.getText().trim();
-            dout.writeUTF(mensajeSaliente);
+            String mensaje = "";
+            mensaje = txt_textoAEnviar.getText();
+            dataOutput.writeUTF(mensaje);
+            txt_textoAEnviar.setText("");
         } catch (Exception e) {
 
         }
-    }//GEN-LAST:event_btn_clientetosendActionPerformed
-
-    private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
-        this.setVisible(false);
-        this.dispose();
-        Principal principal = new Principal();
-        principal.setVisible(true);
-        principal.setLocationRelativeTo(null);
-
-    }//GEN-LAST:event_btn_SalirActionPerformed
+    }//GEN-LAST:event_btn_enviarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,28 +141,30 @@ public class ClienteChat extends javax.swing.JFrame {
                 new ClienteChat().setVisible(true);
             }
         });
-
+        
         try {
-            s = new Socket("127.0.0.1", 1201);
-            din = new DataInputStream(s.getInputStream());
-            dout = new DataOutputStream(s.getOutputStream());
             String mensajeEntrante = "";
+            
+            socket = new Socket("127.0.0.1",1201); // 
+            dataInput = new DataInputStream(socket.getInputStream());
+            dataOutput = new DataOutputStream(socket.getOutputStream());
 
             while (!mensajeEntrante.equals("exit")) {
-                mensajeEntrante = din.readUTF();
-                txtarea_zonamensajescliente.setText(txtarea_zonamensajescliente.getText().trim() + "\n" + mensajeEntrante);
+                mensajeEntrante = dataInput.readUTF();
+                //En vez de cliente definido, lo podemos cambiar por el nombre del usuario logueado
+                txta_mensajes.setText(txta_mensajes.getText() + "\n Proveedor : " + mensajeEntrante);
             }
+
         } catch (Exception e) {
 
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Salir;
-    private javax.swing.JToggleButton btn_clientetosend;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_enviar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txt_clientetosend;
-    private static javax.swing.JTextArea txtarea_zonamensajescliente;
+    private javax.swing.JLabel lbl_cliente;
+    private javax.swing.JTextField txt_textoAEnviar;
+    private static javax.swing.JTextArea txta_mensajes;
     // End of variables declaration//GEN-END:variables
 }

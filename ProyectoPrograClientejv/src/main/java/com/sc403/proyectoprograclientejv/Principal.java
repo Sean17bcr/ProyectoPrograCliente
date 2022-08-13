@@ -3,6 +3,7 @@
 //https://www.youtube.com/watch?v=nMhB4EoMm8A usé este video para saber cómo modificar la imagen de los botones
 package com.sc403.proyectoprograclientejv;
 
+import static com.sc403.proyectoprograclientejv.Main.chatCliente;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -345,7 +346,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void btn_chatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chatActionPerformed
         this.setVisible(false);
         this.dispose();
-        frmchat();
+        
+        chatCliente.setVisible(true);
+
+//frmchat();
     }//GEN-LAST:event_btn_chatActionPerformed
 
     private void btn_ModificarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarPlanActionPerformed
@@ -381,7 +385,13 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                ClienteChat chatCliente = new ClienteChat();
+                chatCliente.setVisible(false);
+                
+                Principal frmPrincipal = new Principal();
+                frmPrincipal.setTitle("Bienvenido");
+                frmPrincipal.setLocationRelativeTo(null);
+                frmPrincipal.setVisible(true);
             }
         });
     }
@@ -437,7 +447,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
     private void frmchat() {
 
-        ProveedorChat frmChatProveedor = new ProveedorChat();
         ClienteChat frmChatCliente = new ClienteChat();
 
         /*frmChatProveedor.setTitle("Proveedor");
