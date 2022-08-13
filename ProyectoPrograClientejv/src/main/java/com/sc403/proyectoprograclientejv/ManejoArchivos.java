@@ -72,7 +72,7 @@ public class ManejoArchivos {
                 file.createNewFile();
             }
 
-            //True parámetro, permite que al archivo se le pueda adicionar información 
+            
             FileWriter fw = new FileWriter(file, true);
 
             BufferedWriter bw = new BufferedWriter(fw);
@@ -85,7 +85,7 @@ public class ManejoArchivos {
                     + this.obj_Cliente.getServicio() + ","
                     + this.obj_Cliente.getNom_Barrio() + ",");
 
-            //Adiciona la información en el archivo 
+
             bw.flush();
             bw.newLine();
 
@@ -109,15 +109,15 @@ public class ManejoArchivos {
             String registro;
             File file = new File(this.ruta + this.nombre_archivo);
 
-            //Si el archivo no existe es creado
+   
             if (!file.exists()) {
                 file.createNewFile();
                 JOptionPane.showMessageDialog(null, "No hay registros de Clientes!!!");
-                //Se sale del método
+         
                 return;
             }
 
-            //Para leer el archivo usamos objetos READER
+         
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
 
@@ -133,8 +133,7 @@ public class ManejoArchivos {
 
                 contador++;
 
-                //La clase StringTokenizer nos ayuda a dividir un string en substring más pequeños o tokens, 
-                //Para este caso se van a crear varios tokens según esté separado por el carecter ","
+              
                 StringTokenizer st = new StringTokenizer(registro, ",");
 
                 lectura = lectura + st.nextToken() + " " + st.nextToken() + " " + st.nextToken() + " "
@@ -168,16 +167,16 @@ public class ManejoArchivos {
 
             File file = new File(this.ruta + this.nombre_archivo);
 
-            //Si el archivo no existe es creado
+       
             if (!file.exists()) {
                 file.createNewFile();
                 JOptionPane.showMessageDialog(null, "No hay registros del "
                         + "Cliente!!!");
-                //Se sale del método
+             
                 return;
             }
 
-            //Para leer el archivo usamos objetos READER
+           
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
 
@@ -203,8 +202,6 @@ public class ManejoArchivos {
                 Num_contrato = st.nextToken();
                 Servicio = st.nextToken();
                 Nom_Barrio = st.nextToken();
-
-                //Compara una cédula con otra para verificar si son iguales
                 if (Cedula.equals(ced)) {
                     contador++;
                     lectura = lectura + Nom_Cliente + " " + Cedula + " " + Primer_Apellido + " "
@@ -295,7 +292,7 @@ public class ManejoArchivos {
 
             
             String nuevoNombre = "", nuevoPrimerApellido = "", nuevoSegundoApellido = "",
-                    nuevoSintoma = "", nuevoNom_Barrio = "", nuevoDiagnostico = "", nuevaCedula = "", registro, ced, registro2;
+            nuevoNom_Barrio = "", nuevaCedula = "", registro, ced, registro2;
             String Nom_Cliente, Cedula, Primer_Apellido, Segundo_Apellido, Num_contrato, Servicio, Nom_Barrio;
             int nuevaEdad = 0;
             int contador = 0;
