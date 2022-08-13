@@ -57,6 +57,7 @@ public class Persona {
     }
     
      public void pedir_datos(){
+         
          this.nom_Cliente = JOptionPane.showInputDialog(null, "Digite el nombre "
                 + "del cliente");
         this.cedula = JOptionPane.showInputDialog(null, "Digite la cédula "
