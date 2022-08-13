@@ -337,11 +337,14 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_btn_ModificarClienteActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        this.setVisible(false);
         this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_chatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chatActionPerformed
-        //run1();
+        this.setVisible(false);
+        this.dispose();
         frmchat();
     }//GEN-LAST:event_btn_chatActionPerformed
 
@@ -417,18 +420,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         }
     }
 
-    public void run1() {
-        Thread cc = Thread.currentThread();
-        frmchat();
-        while (cc == h2) {
-            frmchat();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-            }
-        }
-    }
-
     private void calcula() {
         Calendar calendario = new GregorianCalendar();
         Date fechaHoraActual = new Date();
@@ -449,10 +440,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         ProveedorChat frmChatProveedor = new ProveedorChat();
         ClienteChat frmChatCliente = new ClienteChat();
 
-        frmChatProveedor.setTitle("Proveedor");
+        /*frmChatProveedor.setTitle("Proveedor");
         frmChatProveedor.setLocationRelativeTo(null);
-        frmChatProveedor.setVisible(true);
-
+        frmChatProveedor.setVisible(true);*/
         frmChatCliente.setTitle("Bienvenido");
         frmChatCliente.setLocationRelativeTo(null);
         frmChatCliente.setVisible(true);
