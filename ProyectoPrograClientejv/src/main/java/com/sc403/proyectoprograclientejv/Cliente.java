@@ -50,10 +50,10 @@ public class Cliente extends Persona {
         this.nom_Barrio = nom_Barrio;
     }
     
-    
+    //hola
     @Override
     public void pedir_datos() {
-
+        super.pedir_datos();
         this.num_contrato = JOptionPane.showInputDialog(null, "Digite el numero "
                 + "de contrato del cliente");
         this.servicio = JOptionPane.showInputDialog(null, "Digite el nombre "
