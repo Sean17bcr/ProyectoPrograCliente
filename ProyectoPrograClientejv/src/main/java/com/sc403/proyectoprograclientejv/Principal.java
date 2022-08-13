@@ -3,7 +3,6 @@
 //https://www.youtube.com/watch?v=nMhB4EoMm8A usé este video para saber cómo modificar la imagen de los botones
 package com.sc403.proyectoprograclientejv;
 
-import static com.sc403.proyectoprograclientejv.Main.chatCliente;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -346,10 +345,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void btn_chatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chatActionPerformed
         this.setVisible(false);
         this.dispose();
-        
-        chatCliente.setVisible(true);
-
-//frmchat();
+        frmchat();
     }//GEN-LAST:event_btn_chatActionPerformed
 
     private void btn_ModificarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarPlanActionPerformed
@@ -381,13 +377,17 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        /*Principal f1 = new Principal();
+        ClienteChat f2 = new ClienteChat();
 
-        /* Create and display the form */
+        Thread t1 = new Thread(new TestTwoFrames(f1));
+        Thread t2 = new Thread(new TestTwoFrames(f2));
+
+        t1.start();
+        t2.start();*/
+ /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ClienteChat chatCliente = new ClienteChat();
-                chatCliente.setVisible(false);
-                
                 Principal frmPrincipal = new Principal();
                 frmPrincipal.setTitle("Bienvenido");
                 frmPrincipal.setLocationRelativeTo(null);
@@ -446,12 +446,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }
 
     private void frmchat() {
-
         ClienteChat frmChatCliente = new ClienteChat();
-
-        /*frmChatProveedor.setTitle("Proveedor");
-        frmChatProveedor.setLocationRelativeTo(null);
-        frmChatProveedor.setVisible(true);*/
         frmChatCliente.setTitle("Bienvenido");
         frmChatCliente.setLocationRelativeTo(null);
         frmChatCliente.setVisible(true);
