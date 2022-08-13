@@ -5,5 +5,5 @@ public class Inicio {
         proveChat.setVisible(true);
         proveChat.setLocationRelativeTo(null);
     }
-    
+    //Hola
 }
