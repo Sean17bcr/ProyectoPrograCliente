@@ -159,7 +159,7 @@ public class Archivos_Plan {
             BufferedWriter bw = new BufferedWriter(new FileWriter(tempDB));
 
             nombreP = JOptionPane.showInputDialog(null, "Digite "
-                    + "el nombre del plan que desea eliminar");
+                    + "el nombre del plan que desea eliminar: ");
 
             while ((registro = br.readLine()) != null) {
 
@@ -187,9 +187,9 @@ public class Archivos_Plan {
             tempDB.renameTo(db);
 
             if (contador > 0) {
-                JOptionPane.showMessageDialog(null, "Plan eliminado correctamente");
+                JOptionPane.showMessageDialog(null, "Plan eliminado correctamente!!!");
             } else {
-                JOptionPane.showMessageDialog(null, "Plan no fue encontrado");
+                JOptionPane.showMessageDialog(null, "Plan no fue encontrado!!!");
             }
 
         } catch (Exception ex) {
