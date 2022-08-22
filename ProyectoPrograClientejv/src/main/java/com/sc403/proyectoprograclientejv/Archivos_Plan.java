@@ -159,7 +159,7 @@ public class Archivos_Plan {
             BufferedWriter bw = new BufferedWriter(new FileWriter(tempDB));
 
             nombreP = JOptionPane.showInputDialog(null, "Digite "
-                    + "el nombre del plan que desea eliminar");
+                    + "el nombre del plan que desea eliminar: ");
 
             while ((registro = br.readLine()) != null) {
 
@@ -187,9 +187,9 @@ public class Archivos_Plan {
             tempDB.renameTo(db);
 
             if (contador > 0) {
-                JOptionPane.showMessageDialog(null, "Plan eliminado correctamente");
+                JOptionPane.showMessageDialog(null, "Plan eliminado correctamente!!!");
             } else {
-                JOptionPane.showMessageDialog(null, "Plan no fue encontrado");
+                JOptionPane.showMessageDialog(null, "Plan no fue encontrado!!!");
             }
 
         } catch (Exception ex) {
@@ -205,7 +205,7 @@ public class Archivos_Plan {
             
             String nuevoNombre = "", nuevoMega = "", nuevoSimetrico = "", 
                      registro, nom, registro2;
-            String nombre, megas, simetrico, Segundo_Apellido, Num_contrato, Servicio, Nom_Barrio;
+            String nombre, megas, simetrico;
             
             int contador = 0;
 
@@ -239,9 +239,9 @@ public class Archivos_Plan {
 
             if (contador == 1) {
 
-                nuevoNombre = JOptionPane.showInputDialog(null, "Digite el nuevo nombre del cliente");
-                nuevoMega = JOptionPane.showInputDialog(null, "Digite el nueva cedula del cliente");
-                nuevoSimetrico = JOptionPane.showInputDialog(null, "Digite el nuevo primer apellido del cliente");
+                nuevoNombre = JOptionPane.showInputDialog(null, "Digite el nuevo nombre del plan: ");
+                nuevoMega = JOptionPane.showInputDialog(null, "Digite la cantidad de megas del plan: ");
+                nuevoSimetrico = JOptionPane.showInputDialog(null, "Digite si el plan es simetrico: ");
                
 
                 BufferedReader br2 = new BufferedReader(new FileReader(db));
@@ -271,7 +271,7 @@ public class Archivos_Plan {
                         + "fue actualizado correctamente!!!");
 
             } else {
-                JOptionPane.showMessageDialog(null, "El nombre del cliente "
+                JOptionPane.showMessageDialog(null, "El nombre del plan "
                         + "no fue encontrada en el sistema!!!");
             }
 
@@ -280,26 +280,5 @@ public class Archivos_Plan {
         }
 
     }
-    /* 
     
-    
-    Plan obj_Plan = new Plan();
-    Archivos_Plan obj_Archivos = new Archivos_Plan();
-    
-    Agregar******
-    
-    obj_Plan.pedir_datos();
-    obj_Archivos.setObj_Cliente(obj_Plan);
-    obj_Archivos.agregar_Plan();
-    
-    MOstrar Planes***********
-    obj_Archivos.mostrar_Planes();
-    
-    Borrar****
-    obj_Archivos.borrar_por_Nombre_dePlan();
-    
-    Modificar Plan***
-    obj_Archivos.Modificar_informacion_del_Plan();
-    
-    */
 }
