@@ -1,0 +1,3 @@
+El proyecto se tiene que correr primero el jframe llamado 
+proveedorChat y después el jframe llamado cliente chat esto ya que nosotros
+corremos primero el hilo del chatproveedor
